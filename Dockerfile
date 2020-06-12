@@ -4,9 +4,11 @@ ARG MYSQL_FDW_VERSION=REL-2_5_3
 
 WORKDIR /tmp
 RUN apk update && apk add --no-cache\
-  mysql-dev \
   git \
-  alpine-sdk
+  gcc \
+  libc-dev \
+  make \
+  mysql-dev
 RUN git clone -b "${MYSQL_FDW_VERSION}" https://github.com/EnterpriseDB/mysql_fdw.git
 
 WORKDIR /tmp/mysql_fdw
