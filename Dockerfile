@@ -1,6 +1,6 @@
 FROM postgres:9.5-alpine as fdw_builder
 
-ARG MYSQL_FDW_VERSION=REL-2_5_3
+ARG MYSQL_FDW_VERSION=REL-2_5_4
 
 WORKDIR /tmp
 RUN apk update && apk add --no-cache\
